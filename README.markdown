@@ -69,21 +69,21 @@ Add the following lines to ~/.gemrc, this will speed up gem installation and pre
     gem: --no-rdoc --no-ri
 
 
-Ruby 1.9.2
+Ruby 1.9.3
 ----------
 
 Check for newer version at [http://www.ruby-lang.org/en/downloads/](http://www.ruby-lang.org/en/downloads/)
 
 Install package required by ruby enterprise, C compiler, Zlib development headers, OpenSSL development headers, GNU Readline development headers
 
-    sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev
+    sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline6-dev
 
 Download and install Ruby
 
-    wget ftp://ftp.ruby-lang.org//pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
-    tar xvfz ruby-1.9.2-p136.tar.gz 
-    rm ruby-1.9.2-p136.tar.gz 
-    cd ruby-1.9.2-p136.tar.gz/
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p286.tar.gz
+    tar xvfz ruby-1.9.3-p286.tar.gz
+    rm ruby-1.9.3-p286.tar.gz 
+    cd ruby-1.9.3-p286/
     ./configure
     make
     sudo make install
@@ -95,8 +95,7 @@ For installing in /opt
 Verify the ruby installation
 
     ruby -v
-    ruby 1.9.2p136 (2010-12-25 revision 30365) [i686-linux]
-
+    ruby 1.9.3p286 (2012-10-12 revision 37165) [i686-linux]
 
 Passenger 
 ---------
@@ -111,18 +110,14 @@ Check for newer version at [http://git-scm.com/download](http://git-scm.com/down
 
 Download and install git
 
-    sudo apt-get build-dep git-core
-
-    wget http://kernel.org/pub/software/scm/git/git-1.7.5.1.tar.bz2
-    tar -jxvf git-1.7.5.1.tar.bz2
-    cd git-1.7.5.1
-    ./configure
-    make
-    sudo make install
+    sudo apt-get install git-core
+    git --version
+    git version 1.7.9.5
 
 Nginx
 -------
-
+    
+    sudo apt-get install libcurl4-openssl-dev
     sudo passenger-install-nginx-module
 
 Select option 1. Yes: download, compile and install Nginx for me. (recommended)
