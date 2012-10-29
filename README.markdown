@@ -175,7 +175,7 @@ Verify that you can start and stop nginx with init script
     
 If you want, reboot and see so the webserver is starting as it should.
 
-Installning ImageMagick and RMagick
+Installing ImageMagick and RMagick
 -----------------------------------
 
 If you want to install the latest version of ImageMagick. I used MiniMagick that shell-out to the mogrify command, worked really well for me.
@@ -183,7 +183,7 @@ If you want to install the latest version of ImageMagick. I used MiniMagick that
     # If you already installed imagemagick from apt-get
     sudo apt-get remove imagemagick
 
-    sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev libz-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl3-dev graphviz gs-gpl pkg-config
+    sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev zlib1g-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl-dev graphviz libjpeg-turbo8-dev libjpeg8-dev libjpeg-dev pkg-config
 
 Use wget to grab the source from ImageMagick.org.
 
@@ -196,7 +196,7 @@ Once the source is downloaded, uncompress it:
 
 Now configure and make:
 
-    cd ImageMagick-6.6.2-10
+    cd ImageMagick-6.8.0-3/
     ./configure
     make
     sudo make install
@@ -222,7 +222,7 @@ Installing Vim 7.2 From Source
 
 Add plugins and snippets
 
-    git clone git://github.com/cassiomarques/cmarques-vimfiles.git ~/.vim    
+    git clone git://github.com/cassiomarques/cmarques-vimfiles.git ~/.vim
     cp .vim/vimrc ~/.vimrc
 
     sudo apt-get install exuberant-ctags
