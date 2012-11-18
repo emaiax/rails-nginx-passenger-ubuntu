@@ -76,17 +76,24 @@ Check for newer version at [http://www.ruby-lang.org/en/downloads/](http://www.r
 
 Install package required by ruby enterprise, C compiler, Zlib development headers, OpenSSL development headers, GNU Readline development headers
 
-    sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline6-dev
+    sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline-gplv2-dev
+
+Download and install YALM
+
+    wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+    tar xzvf yaml-0.1.4.tar.gz
+    cd yaml-0.1.4
+    ./configure
+    make && sudo make install
 
 Download and install Ruby
 
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p286.tar.gz
-    tar xvfz ruby-1.9.3-p286.tar.gz
-    rm ruby-1.9.3-p286.tar.gz 
-    cd ruby-1.9.3-p286/
+    wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz
+    tar xvfz ruby-1.9.3-p327.tar.gz 
+    rm ruby-1.9.3-p327.tar.gz 
+    cd ruby-1.9.3-p327.tar.gz/
     ./configure
-    make
-    sudo make install
+    make && sudo make install
 
 For installing in /opt
 
@@ -95,7 +102,8 @@ For installing in /opt
 Verify the ruby installation
 
     ruby -v
-    ruby 1.9.3p286 (2012-10-12 revision 37165) [i686-linux]
+    ruby 1.9.3p327 (2012-11-10 revision 37606) [x86_64-linux]
+
 
 Passenger 
 ---------
