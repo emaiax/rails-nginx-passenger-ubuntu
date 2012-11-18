@@ -78,7 +78,7 @@ Install package required by ruby enterprise, C compiler, Zlib development header
 
     sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline-gplv2-dev
 
-Download and install YALM
+Download and install YAML
 
     wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
     tar xzvf yaml-0.1.4.tar.gz
