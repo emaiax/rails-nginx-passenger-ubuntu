@@ -14,6 +14,37 @@ If you have trouble with PATH that changes when doing sudo, see http://stackover
 
     echo "alias sudo='sudo env PATH=$PATH'" >> ~/.bash_aliases
     
+User
+-------
+
+Create a ***deploy*** user and setup its password
+
+    useradd -m -g deploy -s /bin/bash deploypasswd deploy
+    passwd deploy
+
+Add the following lines to /etc/sudoers, this will make the new user never asks for the sudo password
+
+    %deploy ALL=(ALL:ALL) ALL
+
+Locales
+--------
+
+To prevent those annoying locale messages below
+
+    perl: warning: Setting locale failed.
+    perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LANG = "en_US.UTF-8"
+        are supported and installed on your system.
+
+You must add the following like /etc/default/locale
+
+    sudo locale-gen en_US en_US.UTF-8
+
+And then run the command bellow
+
+    sudo dpkg-reconfigure locales
 
 Update and upgrade the system
 -------------------------------
@@ -54,7 +85,7 @@ Install mysql
 
 This should be installed before Ruby Enterprise Edition becouse that will install the mysql gem.
 
-    sudo apt-get install mysql-server libmysqlclient15-dev
+    sudo apt-get install mysql-server libmysqlclient-dev
     
     
 Gemrc
@@ -191,7 +222,8 @@ If you want to install the latest version of ImageMagick. I used MiniMagick that
     # If you already installed imagemagick from apt-get
     sudo apt-get remove imagemagick
 
-    sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev zlib1g-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl-dev graphviz libjpeg-turbo8-dev libjpeg8-dev libjpeg-dev pkg-config
+    sudo apt-get install libjpeg8-dev libpng12-dev libglib2.0-dev libfontconfig1-dev zlib1g-dev libtiff4-dev
+    #sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev zlib1g-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl-dev graphviz libjpeg-turbo8-dev libjpeg8-dev libjpeg-dev pkg-config
 
 Use wget to grab the source from ImageMagick.org.
 
@@ -221,6 +253,15 @@ Install RMagick
 
 Installing Vim 7.2 From Source
 ----------------------------------
+
+    wget ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
+    tar xvjf vim-7.3.tar.bz2
+    cd vim73
+    ./configure --with-features=huge --enable-gui=gnome2 --enable-cscope --enable-pythoninterp
+    make
+    sudo make install
+
+Or
 
     svn co https://vim.svn.sourceforge.net/svnroot/vim/branches/vim7.2
     cd vim7.2/
