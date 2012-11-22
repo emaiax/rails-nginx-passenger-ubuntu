@@ -222,7 +222,8 @@ If you want to install the latest version of ImageMagick. I used MiniMagick that
     # If you already installed imagemagick from apt-get
     sudo apt-get remove imagemagick
 
-    sudo apt-get install libjpeg8-dev libpng12-dev libglib2.0-dev libfontconfig1-dev zlib1g-dev libtiff4-dev
+    sudo apt-get install libjpeg8-dev libpng12-dev libglib2.0-dev libfontconfig1-dev zlib1g-dev libtiff4-dev libxslt-dev libxml2-dev
+
     #sudo apt-get install libperl-dev gcc libjpeg62-dev libbz2-dev libtiff4-dev libwmf-dev zlib1g-dev libpng12-dev libx11-dev libxt-dev libxext-dev libxml2-dev libfreetype6-dev liblcms1-dev libexif-dev perl libjasper-dev libltdl-dev graphviz libjpeg-turbo8-dev libjpeg8-dev libjpeg-dev pkg-config
 
 Use wget to grab the source from ImageMagick.org.
